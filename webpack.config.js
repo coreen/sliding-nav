@@ -1,4 +1,5 @@
 const path = require("path");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
 	entry: "./src/index.tsx",
@@ -7,16 +8,12 @@ module.exports = {
 		filename: "bundle.js",
 		path: path.resolve(__dirname, "dist")
 	},
-	// Enable sourcemaps for debugging webpack output.
-	// TODO: remove this for production release
-	devtool: "source-map",
 	resolve: {
 		extensions: [".ts", ".tsx", ".js", ".json", ".png", ".scss"]
 	},
 	module: {
 		rules: [
 			{ test: /\.tsx?$/, loader: "awesome-typescript-loader" },
-			{ enforce: "pre", test: /\.js$/, loader: "source-map-loader" },
 			{
 				test: /\.png$/,
 				loader: "file-loader",
@@ -25,13 +22,23 @@ module.exports = {
 				}
 			},
 			{
-				test: /\.scss$/,
-				use: ["style-loader", "css-loader", "sass-loader"]
+				test: /\.s?css$/,
+				use: [
+					MiniCssExtractPlugin.loader,
+					"css-loader",
+					"sass-loader"
+				]
 			}
 		]
 	},
 	externals: {
 		"react": "React",
 		"react-dom": "ReactDOM"
-	}
+	},
+	plugins: [
+		new MiniCssExtractPlugin({
+			filename: "[name].css", // defaults to main.css
+			chunkFilename: "[id].css"
+		})
+	]
 }

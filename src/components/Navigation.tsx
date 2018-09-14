@@ -17,14 +17,15 @@ interface SubItem {
 // TODO find ways to add React.PureComponent and React.SFC implementations to example
 
 export class Navigation extends React.Component<NavProps, {}> {
+	// actual type used by React, JSX.Element is used if create const without specifying via type inference
 	public render(): React.ReactNode {
 		const { data } = this.props;
 		const menuItems = data.map((item: Item) =>
-			<span className="nav-item">{item.label}</span>);
+			<li className="nav-item">{item.label}</li>);
 
 		return (
 			<div className="nav-menu">
-				{menuItems}
+				<ul>{menuItems}</ul>
 			</div>
 		);
 	}

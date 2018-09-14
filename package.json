@@ -5,7 +5,7 @@
 		"build": "NODE_ENV=development ./node_modules/.bin/webpack",
 		"watch": "NODE_ENV=development ./node_modules/.bin/webpack --watch",
 		"server": "./node_modules/.bin/webpack-dev-server",
-		"start": "yarn build && yarn server"
+		"start": "npm run build && npm run server"
 	},
 	"dependencies": {
 		"@types/react": "^16.4.13",
@@ -19,10 +19,9 @@
 		"awesome-typescript-loader": "^5.2.0",
 		"css-loader": "^1.0.0",
 		"file-loader": "~2.0.0",
+		"mini-css-extract-plugin": "^0.4.2",
 		"node-sass": "^4.9.3",
 		"sass-loader": "^7.1.0",
-		"source-map-loader": "^0.2.4",
-		"style-loader": "^0.23.0",
 		"typescript": "^2.7.0",
 		"webpack": "^4.17.2",
 		"webpack-cli": "^3.1.0",

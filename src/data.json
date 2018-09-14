@@ -1,1 +1,30 @@
-// TODO populate following the Item/SubItem interface format in Navigation.tsx
+[
+	{
+		"label": "Home"
+	},
+	{
+		"label": "Conjoint",
+		"contents": [
+			{
+				"label": "Overview",
+				"items": [
+					"Define",
+					"Refine",
+					"Distribute",
+					"Analyze"
+				]
+			},
+			{
+				"label": "Summary",
+				"items": [ "analysis" ]
+			},
+			{
+				"label": "Simulator",
+				"items": [ "visualize" ]
+			}
+		]
+	},
+	{
+		"label": "Service Catalog"
+	}
+]
