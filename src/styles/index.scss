@@ -1,0 +1,13 @@
+.dashboard-contents {
+	width: 100%;
+
+	&.nav-open {
+		position: relative;
+		left: 300px;
+	}
+}
+
+.nav-menu {
+	width: 300px;
+	display: inline-block;
+}
