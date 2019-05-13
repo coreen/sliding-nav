@@ -21,14 +21,16 @@ export class Dashboard extends React.Component<{}, DashboardState> {
 		};
 
 		return (
-			<div>
-				{
-					this.state.showNav &&
-					<Navigation data={require("../data.json")} />
-				}
+			<>
 				<button onClick={this.onClick}>Menu</button>
-				<img className={classNames(contentClasses)} src={require("../DashboardContent.png")} />
-			</div>
+				<div className="page">
+					{
+						this.state.showNav &&
+						<Navigation data={require("../data.json")} />
+					}
+					<img className={classNames(contentClasses)} src={require("../DashboardContent.png")} />
+				</div>
+			</>
 		);
 	}
 }
